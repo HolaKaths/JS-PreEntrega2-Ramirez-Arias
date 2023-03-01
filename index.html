@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora de edad humana para perros y gatos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+ <!--Navbar-->
+ <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"> <img src="./assets/images/mascota.png" height="55px" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="mb-2 nav-link active me-2 h5 text-white text-decoration-none" aria-current="page"
+                            href="./pages/conocenos.html"> Conócenos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active me-2 h5 text-white text-decoration-none"
+                            href="./pages/buscador.html">Buscador Vet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active me-2 h5 text-white text-decoration-none" aria-current="page"
+                            href="./pages/instapets.html">Instapets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active me-2 h5 text-white text-decoration-none" aria-current="page"
+                            href="./pages/blog.html">Blog/Foro</a>
+                    </li>
+
+                </ul>
+
+                <div class="col-xs-9 col-lg-1">
+                    <form action="./pages/login.html">
+                        <button class="me-2 h6 text-white text-decoration-none" id="buttonlogin"
+                            href="./pages/login.html"> Log in
+                        </button>
+                    </form>
+                </div>
+                <div class="col-xs-9 col-lg-1">
+                    <form action="./pages/registro1.html">
+                        <button class="me-2 h6 text-white text-decoration-none" id="buttonregister"
+                            href="./pages/registro1.html"> Regístrate
+                        </button>
+                    </form>
+                </div>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 h5 text-white text-decoration-none" type="search"
+                        placeholder="Busca contenido aquí" aria-label="Search">
+                    <button class="btn btn-outline-success h5 text-white text-decoration-none" id="buttonsearch"
+                        type="submit">Buscar</button>
+                </form>
+
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+
+    <div class="contenedor">
+        <h1 class="titulo">Calculadora de edad humana y peso para perros y gatos</h1>
+        <form class="formulario">
+            <div class="grupo">
+                <label for="animal" class="etiqueta">¿Qué animal quieres calcular?</label>
+                <select id="animal" name="animal" class="selector">
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                </select>
+            </div>
+            <div class="grupo">
+                <label for="edad" class="etiqueta">¿Qué edad tiene tu animal?</label>
+                <input type="number" id="edad" name="edad" class="selector">
+            </div>
+            <div class="grupo">
+                <label for="tamano" class="etiqueta">¿Qué tamaño tiene tu animal?</label>
+                <select id="tamano" name="tamano" class="selector">
+                    <option value="pequeno">Pequeño (5 a 10 kg)</option>
+                    <option value="mediano">Mediano (11 a 25 kg)</option>
+                    <option value="grande">Grande (más de 25 kg)</option>
+                </select>
+            </div>
+            <button type="button" class="boton" onclick="calcularEdad()">Calcular</button>
+        </form>
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+
+
+
+    <!--Footer-->
+    <div class="container-fluid">
+        <div id="footer" class="row">
+            <div class="p-5 col-xs-12 col-sm-3 col-md-3 col-lg-3 d-flex align-items-center py-3">
+                <p class="mb-2"> <img src="./assets/images/mascota.png" height="70px" /> </p>
+            </div>
+
+            <div class="mb-2 d-flex flex-column align-items-center col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <a class="h5 text-black text-decoration-none py-2" href="./pages/conocenos.html"> <b> Conócenos </b></a>
+                <a class="h5 text-black text-decoration-none py-2" href="app.html"> <b> Mobile APP </b></a>
+                <a class="h5 text-black text-decoration-none py-2" href="faqs.html"> <b> FAQs </b></a>
+            </div>
+            <div class="mb-2 d-flex flex-column align-items-center col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <a class="h5 text-black text-decoration-none py-2" href="#"> <b> LinkedIn </b></a>
+                <a class="h5 text-black text-decoration-none py-2" href="#"> <b> Instagram </b></a>
+                <a class="h5 text-black text-decoration-none py-2" href="#"> <b> Facebook </b></a>
+            </div>
+            <div class="mb-2 d-flex flex-column align-items-center col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <a class="h5 text-black text-decoration-none py-2" href="#"> <b> Suscríbete </b></a>
+            </div>
+        </div>
+    </div>
+
+    <div     <script src="script.js"></script>
+    </div>
+</body>
+
+
+</html>
