@@ -79,58 +79,60 @@
 
 <body>
 
-
     <div class="contenedor">
         <h1 class="titulo">Calculadora de edad humana y peso para perros y gatos</h1>
         <form class="formulario">
-            <div class="grupo">
-                <label for="animal" class="etiqueta">¿Qué animal quieres calcular?</label>
-                <select id="animal" name="animal" class="selector">
-                    <option value="perro">Perro</option>
-                    <option value="gato">Gato</option>
-                </select>
-            </div>
-            <div class="grupo">
-                <label for="numero" class="etiqueta">¿Qué edad tiene tu mascota?</label>
-                <select id="edad" name="numero" class="selector">
-                    <option value="1">1 año</option>
-                    <option value="2">2 años</option>
-                    <option value="3">3 años</option>
-                    <option value="4">4 años</option>
-                    <option value="5">5 años</option>
-                    <option value="6">6 años</option>
-                    <option value="7">7 años</option>
-                    <option value="8">8 años</option>
-                    <option value="9">9 años</option>
-                    <option value="10">10 años</option>
-                    <option value="11">11 años</option>
-                    <option value="12">12 años</option>
-                    <option value="13">13 años</option>
-                    <option value="14">14 años</option>
-                    <option value="15">15 años</option>
-                    <option value="16">16 años</option>
-                    <option value="17">17 años</option>
-                    <option value="18">18 años</option>
-                    <option value="19">19 años</option>
-                    <option value="20">20 años</option>
-                </select>
-            </div>
-            <div class="grupo">
-                <label for="tamano" class="etiqueta">¿Qué tamaño tiene tu animal?</label>
-                <select id="tamano" name="tamano" class="selector">
-                    <option value="pequeno">Pequeño (5 a 10 kg)</option>
-                    <option value="mediano">Mediano (11 a 25 kg)</option>
-                    <option value="grande">Grande (más de 25 kg)</option>
-                </select>
-            </div>
-            <button type="button" class="boton" onclick="calcularEdad()">Calcular</button>
+          <div class="grupo">
+            <label for="animal" class="etiqueta">¿Qué animal quieres calcular?</label>
+            <select id="animal" name="animal" class="selector">
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+            </select>
+          </div>
+          <div class="grupo">
+            <label for="nombre" class="etiqueta">¿Cuál es el nombre de tu mascota?</label>
+            <input type="text" id="nombre" name="nombre" class="entrada">
+          </div>
+          <div class="grupo">
+            <label for="numero" class="etiqueta">¿Qué edad tiene tu mascota?</label>
+            <select id="edad" name="numero" class="selector">
+              <option value="1">1 año</option>
+              <option value="2">2 años</option>
+              <option value="3">3 años</option>
+              <option value="4">4 años</option>
+              <option value="5">5 años</option>
+              <option value="6">6 años</option>
+              <option value="7">7 años</option>
+              <option value="8">8 años</option>
+              <option value="9">9 años</option>
+              <option value="10">10 años</option>
+              <option value="11">11 años</option>
+              <option value="12">12 años</option>
+              <option value="13">13 años</option>
+              <option value="14">14 años</option>
+              <option value="15">15 años</option>
+              <option value="16">16 años</option>
+              <option value="17">17 años</option>
+              <option value="18">18 años</option>
+              <option value="19">19 años</option>
+              <option value="20">20 años</option>
+            </select>
+          </div>
+          <div class="grupo">
+            <label for="tamano" class="etiqueta">¿Qué tamaño tiene tu animal?</label>
+            <select id="tamano" name="tamano" class="selector">
+              <option value="pequeno">Pequeño (5 a 10 kg)</option>
+              <option value="mediano">Mediano (11 a 25 kg)</option>
+              <option value="grande">Grande (más de 25 kg)</option>
+            </select>
+          </div>
+          <button type="button" class="boton" onclick="calcularEdad()">Calcular</button>
+    
         </form>
         <div id="resultado" class="resultado"></div>
-    </div>
-
-
-
-
+      </div>
+      
+        
     <!--Footer-->
     <div class="container-fluid">
         <div id="footer" class="row">
