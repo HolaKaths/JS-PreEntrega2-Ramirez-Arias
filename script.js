@@ -49,10 +49,10 @@ function calcularEdadMascotas() {
     const nombre = document.getElementById("nombre").value;
     const edad = document.getElementById("edad").value;
     const tamano = document.getElementById("tamano").value;
-  
+
     let edadHumana = 0;
     let peso = 0;
-  
+
     if (animal === "perro") {
       if (edad === 1) {
         edadHumana = 15;
@@ -84,22 +84,22 @@ function calcularEdadMascotas() {
         peso = 5.5 * edad + 1.5;
       }
     }
-  
+
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = `La edad de tu ${animal} ${nombre} en años humanos es ${edadHumana} y su peso ideal estimado a esa edad sería ${peso} kg.`;
   }
-  
+
   function calcularEdadMascotas() {
     const numMascotas = parseInt(prompt("Ingresa el número de mascotas a calcular:"));
     let i = 0;
-  
+
     while (i < numMascotas) {
       calcularEdad();
       i++;
     }
   }
-  
-  
+
+
   let i = 0;
 
   while (i < numMascotas) {
@@ -108,3 +108,44 @@ function calcularEdadMascotas() {
   }
 }
 
+function calcularIMC() {
+  // Obtener los valores de peso y altura
+  const peso = document.getElementById('peso').value;
+  const altura = document.getElementById('altura').value;
+
+  // Calcular el IMC
+  const imc = peso / ((altura / 100) ** 2);
+
+  // Mostrar el resultado en la página
+  const resultado = document.getElementById('resultado');
+  resultado.textContent = imc.toFixed(2);
+}
+
+
+function calcularIMC() {
+  // Obtener los valores de peso y altura
+  const peso = document.getElementById('peso').value;
+  const altura = document.getElementById('altura').value;
+
+  // Calcular el IMC
+  const imc = peso / ((altura / 100) ** 2);
+
+  // Mostrar el resultado en la página
+  const resultado = document.getElementById('resultado2');
+  resultado.textContent = imc.toFixed(2);
+
+  // Evaluar el resultado del IMC
+  if (imc < 18.5) {
+    resultado.textContent += " - Bajo peso";
+  } else if (imc >= 18.5 && imc < 25) {
+    resultado.textContent += " - Peso normal";
+  } else if (imc >= 25 && imc < 30) {
+    resultado.textContent += " - Sobrepeso";
+  } else if (imc >= 30 && imc < 35) {
+    resultado.textContent += " - Obesidad grado 1";
+  } else if (imc >= 35 && imc < 40) {
+    resultado.textContent += " - Obesidad grado 2";
+  } else {
+    resultado.textContent += " - Obesidad grado 3";
+  }
+}
