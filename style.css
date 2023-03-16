@@ -159,13 +159,31 @@ header .navbar {
   background: linear-gradient(to top, #22577A, #38A3A5) no-repeat right/200%;
 }
 
-#imcData table,
-th,
+#imcDatacss table {
+  
+   text-align: center;
+    }
+
+#imcDatacss thead tr {
+ 
+  text-align: center;
+  
+}
+
+#imcDatacss th,
 td {
-  border: 1px solid;
-  border-color: #22577A;
+  font-family: montserrat;
+  border: 2px solid;
+  border-color: #3e8e41;
+  border-radius: 25px
   text-align: center;
   font-family: montserrat;
   padding: 0.2%;
   margin: 0.1%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+
+#contenedor2 {
+  font-family: montserrat;
 }

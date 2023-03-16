@@ -117,19 +117,6 @@ function calcularIMC() {
   const imc = peso / ((altura / 100) ** 2);
 
   // Mostrar el resultado en la página
-  const resultado = document.getElementById('resultado');
-  resultado.textContent = imc.toFixed(2);
-}
-
-function calcularIMC() {
-  // Obtener los valores de peso y altura
-  const peso = document.getElementById('peso').value;
-  const altura = document.getElementById('altura').value;
-
-  // Calcular el IMC
-  const imc = peso / ((altura / 100) ** 2);
-
-  // Mostrar el resultado en la página
   const resultado = document.getElementById('resultado2');
   resultado.textContent = imc.toFixed(2);
 
@@ -221,5 +208,44 @@ function calcularIMCTabla(listaObjetosIMC) {
   return listaObjetosIMC
 }
 
+//Gráfica con los resultados
 
+var valoresTabla = document.querySelectorAll("#imcData tr");
+let listaObjetosIMC = [];
+for (var index = 1; index < valoresTabla.length; index++) {
+  var edad = valoresTabla[index].getElementsByTagName("input")['edad'].value;
+  var peso = valoresTabla[index].getElementsByTagName("input")['peso'].value;
+  var altura = valoresTabla[index].getElementsByTagName("input")['altura'].value;
+  var imc = 0;
+  listaObjetosIMC[index - 1] = { edad, peso, altura, imc }
+}
+
+listaObjetosIMC = calcularIMCTabla(listaObjetosIMC)
+
+var imcValues = listaObjetosIMC.map(function (obj) {
+  return obj.imc;
+});
+var ctx = document.getElementById('imcChart').getContext('2d');
+var chart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: Array.from({ length: imcValues.length }, (v, i) => `Dato 1 ${i + 1}`),
+    datasets: [{
+      label: 'IMC',
+      data: imcValues,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
 
