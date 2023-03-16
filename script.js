@@ -146,6 +146,7 @@ function addNewRow() {
 
   var nuevaEdad = document.createElement("input");
   nuevaEdad.setAttribute("type", "number");
+  nuevaEdad.setAttribute("class", "edad");
   nuevaEdad.setAttribute("name", "edad");
   nuevaEdad.setAttribute("min", "1");
   nuevaEdad.setAttribute("max", "200");
@@ -155,6 +156,8 @@ function addNewRow() {
 
   var nuevoPeso = document.createElement("input");
   nuevoPeso.setAttribute("type", "number");
+ //agregar clase CSS a tu nueva row 
+  nuevoPeso.setAttribute("class", "peso");
   nuevoPeso.setAttribute("name", "peso");
   nuevoPeso.setAttribute("min", "1");
   nuevoPeso.setAttribute("max", "200");
@@ -164,6 +167,9 @@ function addNewRow() {
 
   var nuevaAltura = document.createElement("input");
   nuevaAltura.setAttribute("type", "number");
+ 
+  //Agregar clase CSS a tu nueva row 
+ nuevaAltura.setAttribute("class", "altura");
   nuevaAltura.setAttribute("name", "altura");
   nuevaAltura.setAttribute("min", "1");
   nuevaAltura.setAttribute("max", "200");
@@ -174,6 +180,10 @@ function addNewRow() {
   cell2.appendChild(nuevoPeso);
   cell3.appendChild(nuevaAltura);
   cell4.innerHTML = "";
+
+
+
+
 }
 
 function calcularTabla() {
@@ -207,45 +217,4 @@ function calcularIMCTabla(listaObjetosIMC) {
   }
   return listaObjetosIMC
 }
-
-//Gráfica con los resultados
-
-var valoresTabla = document.querySelectorAll("#imcData tr");
-let listaObjetosIMC = [];
-for (var index = 1; index < valoresTabla.length; index++) {
-  var edad = valoresTabla[index].getElementsByTagName("input")['edad'].value;
-  var peso = valoresTabla[index].getElementsByTagName("input")['peso'].value;
-  var altura = valoresTabla[index].getElementsByTagName("input")['altura'].value;
-  var imc = 0;
-  listaObjetosIMC[index - 1] = { edad, peso, altura, imc }
-}
-
-listaObjetosIMC = calcularIMCTabla(listaObjetosIMC)
-
-var imcValues = listaObjetosIMC.map(function (obj) {
-  return obj.imc;
-});
-var ctx = document.getElementById('imcChart').getContext('2d');
-var chart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: Array.from({ length: imcValues.length }, (v, i) => `Dato 1 ${i + 1}`),
-    datasets: [{
-      label: 'IMC',
-      data: imcValues,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  }
-});
 

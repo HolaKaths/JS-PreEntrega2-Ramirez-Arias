@@ -170,20 +170,52 @@ header .navbar {
   
 }
 
-#imcDatacss th,
-td {
-  font-family: montserrat;
-  border: 2px solid;
-  border-color: #3e8e41;
-  border-radius: 25px
-  text-align: center;
-  font-family: montserrat;
-  padding: 0.2%;
-  margin: 0.1%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
 
 #contenedor2 {
   font-family: montserrat;
 }
+
+/* editado por D */
+
+
+td { padding:10px; }
+
+#imcData {width: 100%;}
+
+#imcDatacss th,
+td {
+  font-family: montserrat;
+ 
+  text-align: center;
+  font-family: montserrat;
+ border-bottom: 1px solid #d5d5d5;
+  margin: 0.1%;
+
+}
+
+.table-header { background-color:#48cae4; }
+
+
+input.edad, input.peso, input.altura {    border-bottom: 1px solid #c1bdbd;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    width: 100%;
+
+
+  }
+
+/* que no se vea esas flechas en el campo de numero */
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
