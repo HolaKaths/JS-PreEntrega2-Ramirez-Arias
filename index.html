@@ -116,7 +116,7 @@
                 </select>
             </div>
             <div class="grupo">
-                <label for="tamano" class="etiqueta">¿Qué tamaño tiene tu animal?</label>
+                <label for="tamano" class="etiqueta">¿Qué tamaño tiene tu mascota?</label>
                 <select id="tamano" name="tamano" class="selector">
                     <option value="pequeno">Pequeño (5 a 10 kg)</option>
                     <option value="mediano">Mediano (11 a 25 kg)</option>
@@ -138,21 +138,48 @@
             Para calcular el índice de masa corporal (IMC) de tu perro, introduce su peso en kilogramos y su altura en
             centímetros:
         </p>
-        <form>
-            <label for="peso">Peso (kg):</label>
-            <input type="number" id="peso" name="peso" min="1" max="200" step="0.1" required><br><br>
-            <label for="altura">Altura (cm):</label>
-            <input type="number" id="altura" name="altura" min="1" max="200" required><br><br>
-            <input type="button" class="boton2" value="Calcular" onclick="calcularIMC()">
+
+        <form id="formularioIMC">
+            <table id="imcData">
+                <tr>
+                    <td>Edad (años)</td>
+                    <td>Peso (kg)</td>
+                    <td>Altura (cm)</td>
+                    <td>IMC</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="edad" min="1" max="200" step="0.1" form="formularioIMC" required>
+                    </td>
+                    <td>
+                        <input type="number" name="peso" min="1" max="200" step="0.1" form="formularioIMC" required>
+                    </td>
+                    <td>
+                        <input type="number" name="altura" min="1" max="200" form="formularioIMC" required>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+             
+            <br>
+            <button type="button" class="boton2" onclick="addNewRow()">Nueva Fila</button>
+
+            <input type="button" class="boton2" value="Calcular" form="formularioIMC" onclick="leerTabla()">
         </form>
-        <br>
-        <p>El IMC de tu perro es:</p>
-        <p id="resultado2"></p>
+        
+        <br><br>
+
         <script src="calcularIMC.js"></script>
     </div>
+
+
+
+
 </body>
 
-</html>
+
 
 <!--Footer-->
 <div class="container-fluid">
@@ -179,6 +206,8 @@
 
 <div>
     <script src="script.js"></script>
+
+
 </div>
 </body>
 

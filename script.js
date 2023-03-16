@@ -121,7 +121,6 @@ function calcularIMC() {
   resultado.textContent = imc.toFixed(2);
 }
 
-
 function calcularIMC() {
   // Obtener los valores de peso y altura
   const peso = document.getElementById('peso').value;
@@ -149,3 +148,78 @@ function calcularIMC() {
     resultado.textContent += " - Obesidad grado 3";
   }
 }
+
+function addNewRow() {
+  var table = document.getElementById("imcData");
+  var row = table.insertRow();
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+
+  var nuevaEdad = document.createElement("input");
+  nuevaEdad.setAttribute("type", "number");
+  nuevaEdad.setAttribute("name", "edad");
+  nuevaEdad.setAttribute("min", "1");
+  nuevaEdad.setAttribute("max", "200");
+  nuevaEdad.setAttribute("step", "0.1");
+  nuevaEdad.setAttribute("form", "formularioIMC");
+  nuevaEdad.setAttribute("required", "");
+
+  var nuevoPeso = document.createElement("input");
+  nuevoPeso.setAttribute("type", "number");
+  nuevoPeso.setAttribute("name", "peso");
+  nuevoPeso.setAttribute("min", "1");
+  nuevoPeso.setAttribute("max", "200");
+  nuevoPeso.setAttribute("step", "0.1");
+  nuevoPeso.setAttribute("form", "formularioIMC");
+  nuevoPeso.setAttribute("required", "");
+
+  var nuevaAltura = document.createElement("input");
+  nuevaAltura.setAttribute("type", "number");
+  nuevaAltura.setAttribute("name", "altura");
+  nuevaAltura.setAttribute("min", "1");
+  nuevaAltura.setAttribute("max", "200");
+  nuevaAltura.setAttribute("form", "formularioIMC");
+  nuevaAltura.setAttribute("required", "");
+
+  cell1.appendChild(nuevaEdad);
+  cell2.appendChild(nuevoPeso);
+  cell3.appendChild(nuevaAltura);
+  cell4.innerHTML = "";
+}
+
+function calcularTabla() {
+
+}
+
+function leerTabla() {
+  var valoresTabla = document.querySelectorAll("#imcData tr");
+  let listaObjetosIMC = [];
+  for (var index = 1; index < valoresTabla.length; index++) {
+    var edad = valoresTabla[index].getElementsByTagName("input")['edad'].value;
+    var peso = valoresTabla[index].getElementsByTagName("input")['peso'].value;
+    var altura = valoresTabla[index].getElementsByTagName("input")['altura'].value;
+    var imc = 0;
+    listaObjetosIMC[index - 1] = { edad, peso, altura, imc }
+  }
+  listaObjetosIMC = calcularIMCTabla(listaObjetosIMC)
+
+  document.querySelectorAll("#imcData tr")
+
+  for (var index = 1; index < valoresTabla.length; index++) {
+    valoresTabla[index].lastElementChild.innerHTML = listaObjetosIMC[index - 1].imc
+  }
+}
+
+function calcularIMCTabla(listaObjetosIMC) {
+  for (var index = 0; index < listaObjetosIMC.length; index++) {
+    var aux = listaObjetosIMC[index];
+    aux.imc = aux.peso / ((aux.altura / 100) ** 2);
+    listaObjetosIMC[index] = aux;
+  }
+  return listaObjetosIMC
+}
+
+
+
